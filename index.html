@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Сабинаға ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#17002b,#ff3f7f);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+.card{
+width:90%;
+max-width:600px;
+text-align:center;
+animation:open 2s;
+}
+
+
+h1{
+font-size:60px;
+}
+
+
+.text{
+margin-top:15px;
+font-size:22px;
+}
+
+
+.envelope{
+
+margin:40px auto;
+width:230px;
+height:150px;
+background:white;
+color:#ff2e63;
+border-radius:20px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+
+.envelope:hover{
+
+transform:scale(1.1) rotate(3deg);
+
+box-shadow:0 0 40px white;
+
+}
+
+
+
+#letter{
+
+display:none;
+
+font-size:22px;
+
+line-height:1.7;
+
+margin-top:25px;
+
+animation:fade 1s;
+
+}
+
+
+
+#thanks{
+
+position:fixed;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%) scale(.5);
+
+font-size:50px;
+font-weight:bold;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:1s;
+
+text-shadow:0 0 30px white;
+
+}
+
+
+
+#thanks.show{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(1);
+
+}
+
+
+
+.heart{
+
+position:absolute;
+
+bottom:-20px;
+
+font-size:25px;
+
+animation:fly 6s linear infinite;
+
+}
+
+
+
+@keyframes fly{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes open{
+
+from{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>Сабина ❤️</h1>
+
+
+<div class="text">
+
+Кейбір адамдар өмірде із қалдырады...
+
+</div>
+
+
+
+<div class="envelope" onclick="openLetter()">
+
+💌 Хатты аш
+
+</div>
+
+
+
+<div id="letter">
+
+
+Сәлем, Сабина ❤️<br><br>
+
+
+Мүмкін бәрі біз ойлағандай болмады...<br>
+
+Бірақ болған әдемі сәттер үшін рахмет.<br><br>
+
+
+Сенің күлкің, мінезің, өзіңе ғана тән
+қасиеттерің есімде қалады.<br><br>
+
+
+Мен саған тек бақыт тілеймін ✨<br><br>
+
+
+Өмірің әрқашан әдемі болсын ❤️<br><br>
+
+
+— сенің бір түрлі досың, Ернұр 😄<br><br>
+
+
+<span style="font-size:32px">
+
+Бұзық болсаң да сүйкімдісің ❤️
+
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="thanks">
+
+Рахмет, ерке Сабина ❤️
+
+</div>
+
+
+
+<script>
+
+
+function openLetter(){
+
+
+document.getElementById("letter").style.display="block";
+
+
+let t=document.getElementById("thanks");
+
+
+t.classList.add("show");
+
+
+
+setTimeout(()=>{
+
+t.classList.remove("show");
+
+},4000);
+
+
+
+}
+
+
+
+
+setInterval(()=>{
+
+
+let h=document.createElement("div");
+
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+
+h.style.left=Math.random()*100+"%";
+
+
+h.style.animationDuration=(3+Math.random()*5)+"s";
+
+
+
+document.body.appendChild(h);
+
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},6000);
+
+
+
+},300);
+
+
+
+</script>
+
+
+</body>
+
+</html>
